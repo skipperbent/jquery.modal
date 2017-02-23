@@ -29,3 +29,24 @@ $(document).on('click', 'a[data-modal="true"]', function(e) {
     $p.modal.setTitle('My title').setUrl(url).show();
 });
 ```
+
+## Callbacks
+
+You can change callbacks easily by using the `$p.modal.bind()` function.
+
+**Availible events:**
+
+- **show:** triggers when `$p.modal.show` is triggered
+- **load:** triggers when content is loading (return string to overwrite content-load).
+- **closing:** triggers when modal is closing
+- **closed:** triggers when modal is closed
+- **center:** triggers when modal is being centered
+
+**Example:**
+```js
+$p.modal.bind('load', function(modal, event) {
+    
+   return 'My custom modal content';
+   
+});
+```
